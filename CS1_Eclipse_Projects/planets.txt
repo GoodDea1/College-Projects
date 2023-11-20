@@ -1,0 +1,26 @@
+Example input file.  Ignore the column headers
+
+Type  Name        Type  Distance   Mass
+----  ----------- ----  ---------  ---------
+01    Mercury       0   5.793e10   3.300e23
+
+01    Venus       	0	1.080e11   4.870e24
+
+01    Earth       	3	1.497e11   5.980e24
+02    Moon          0   4.054e05   7.348e22
+
+01    Mars        	0	2.278e11   6.420e23
+02    Phobos      	0	9.517e03  1.066e16
+02    Demos       	0	2.347e03  1.476e15
+
+01    Jupiter     	1	7.782e11   1.900e27
+02    Io          	4	4.234e05   8.931e22   
+02    Europa      	2	6.769e05   4.799e22
+02    Ganymede    	0	1.071e06   1.482e23
+02    Callisto    	0	1.897e06   1.075e23
+
+01    Saturn      	1	1.427e12   5.960e26
+02    Enceladus   	0	2.379e05   1.100e20
+02    Tethys      	0	2.946e05   6.200e20
+
+

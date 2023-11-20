@@ -1,0 +1,42 @@
+     1                                  SECTION .data
+     2                                  SECTION .bss
+     3                                  SECTION .text
+     4                                  
+     5                                  global	swapArrays
+     6                                  global	addArray
+     7                                  global	addTwo
+     8                                  
+     9                                  swapArrays:
+    10 00000000 4889D1                  	mov		rcx,	rdx					;Setting counter to value of third parameter (number of items in each array)
+    11 00000003 53                      	push	rbx							;Needed wehn C++ calls assembler programs
+    12                                  	L1:
+    13 00000004 488B07                  		mov	rax,	[rdi]				;RAX stores the value of RDI to swap later
+    14 00000007 488B1E                  		mov	rbx,	[rsi]				;RBX stores the value of RSI to swap later
+    15 0000000A 488906                  		mov	[rsi],	rax					;Copies value of RAX into RSI array
+    16 0000000D 48891F                  		mov	[rdi],	rbx					;Copies value of RBX into RDI array
+    17 00000010 4883C708                		add	rdi,	8					;Increments first array using indirect method
+    18 00000014 4883C608                		add	rsi,	8					;Increments second array using indirect method
+    19 00000018 E2EA                    	loop	L1							;Looping undil RCX equals 0
+    20 0000001A 5B                      	pop		rbx							;Needed wehn C++ calls assembler programs
+    21 0000001B C3                      	ret									;Return
+    22                                  	
+    23                                  addArray:
+    24 0000001C 4889F1                  	mov		rcx,	rsi					;Copy second parameter (amount of items in array) to RCX
+    25 0000001F 4889FE                  	mov		rsi,	rdi					;Copy first parameter (pointer to array) to RSI
+    26 00000022 53                      	push	rbx							;Needed wehn C++ calls assembler programs
+    27 00000023 BB00000000              	mov		rbx,	0					;Going to be used for indexed method, so setting it to 0
+    28 00000028 B800000000              	mov		rax,	0					;Setting total holder to 0
+    29                                  	L2:
+    30 0000002D 488B141E                		mov		rdx,	[rsi + rbx]		;Copying value of RSI into RDX using indexed method
+    31 00000031 4801D0                  		add		rax,	rdx				;Adding value in RDX into RAX
+    32 00000034 4883C308                		add		rbx,	8				;Incrementing array by the size of each item which is 8 bytes (quadwords)
+    33 00000038 E2F3                    	loop	L2							;Looping until RCX equals 0
+    34 0000003A 5B                      	pop		rbx							;Needed wehn C++ calls assembler programs
+    35 0000003B C3                      	ret									;Returning RAX
+    36                                  	
+    37                                  addTwo:
+    38 0000003C 53                      	push	rbx							;Needed wehn C++ calls assembler programs
+    39 0000003D 4889F0                  	mov		rax,	rsi					;Copying value of RSI into RAX
+    40 00000040 4801F8                  	add		rax,	rdi					;Adding value of RDI into RAX
+    41 00000043 5B                      	pop		rbx							;Needed wehn C++ calls assembler programs
+    42 00000044 C3                      	ret									;Returning RAX

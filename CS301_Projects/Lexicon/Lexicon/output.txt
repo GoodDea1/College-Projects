@@ -1,0 +1,17 @@
+input.txt
+
+Listing: How much wood could a woodchuck chuck if a woodchuck could chuck wood?
+A: 2
+Chuck: 2
+Could: 2
+How: 1
+If: 1
+Much: 1
+Wood: 2
+Woodchuck: 2
+
+Total number of words: 13
+Number of unique words: 8
+Number of unique words of more than three letters: 5
+Average word length: 4
+Average sentence length: 13

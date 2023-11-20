@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Nicholas Deal\source\repos\Lexicon\Lexicon\main.cpp(76,40): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  Lexicon.vcxproj -> C:\Users\Nicholas Deal\source\repos\Lexicon\x64\Debug\Lexicon.exe
